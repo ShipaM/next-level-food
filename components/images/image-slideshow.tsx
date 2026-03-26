@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { images } from "./constants";
 
-export default function ImageSlideshow() {
+const ImageSlideshow = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -29,4 +29,6 @@ export default function ImageSlideshow() {
       ))}
     </div>
   );
-}
+};
+
+export default ImageSlideshow;

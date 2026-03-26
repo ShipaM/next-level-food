@@ -4,7 +4,7 @@ import mealIcon from "@/assets/icons/meal.png";
 import communityIcon from "@/assets/icons/community.png";
 import eventsIcon from "@/assets/icons/events.png";
 
-export default function CommunityPage() {
+export const CommunityPage = () => {
   return (
     <>
       <header className="gap-12 my-12 mb-20 mx-auto w-[90%] max-w-300 text-[#ddd6cb] text-2xl text-center">
@@ -62,4 +62,6 @@ export default function CommunityPage() {
       </main>
     </>
   );
-}
+};
+
+export default CommunityPage;
