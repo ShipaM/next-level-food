@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Meal } from "./type";
 
-const MealItem = ({ title, slug, image, summary, creator }: Meal) => {
+export const MealItem = ({ title, slug, image, summary, creator }: Meal) => {
   return (
     <article className="flex flex-col justify-between h-full rounded shadow-[0_0_12px_rgba(0,0,0,0.3)] overflow-hidden transition-all duration-300 ease-in-out text-[#ddd6cb] bg-linear-to-r from-[#2c1e19] to-[#25200f]">
       <header>
@@ -36,5 +36,3 @@ const MealItem = ({ title, slug, image, summary, creator }: Meal) => {
     </article>
   );
 };
-
-export default MealItem;

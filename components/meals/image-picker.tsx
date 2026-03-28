@@ -3,7 +3,13 @@
 import Image from "next/image";
 import { useRef, useState } from "react";
 
-const ImagePicker = ({ label, name }: { label: string; name: string }) => {
+export const ImagePicker = ({
+  label,
+  name,
+}: {
+  label: string;
+  name: string;
+}) => {
   const [pickedImage, setPickedImage] = useState<string | null>(null);
   const imageInputRef = useRef<HTMLInputElement>(null);
 
@@ -62,5 +68,3 @@ const ImagePicker = ({ label, name }: { label: string; name: string }) => {
     </div>
   );
 };
-
-export default ImagePicker;

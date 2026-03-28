@@ -1,7 +1,11 @@
-import ImagePicker from "@/components/meals/image-picker";
+"use client";
+import { ImagePicker, MealsFormSubmit } from "@/components/meals";
 import { shareMeal } from "../actions";
+import { useFormState } from "react-dom";
 
 const ShareMealPage = () => {
+  const [state, formAction] = useFormState(shareMeal, {});
+
   return (
     <>
       <header className="gap-12 my-12 mb-20 mx-auto w-[90%] max-w-300 text-[#ddd6cb] text-2xl">
@@ -14,7 +18,7 @@ const ShareMealPage = () => {
         <p>Or any other meal you feel needs sharing!</p>
       </header>
       <main className="w-[90%] max-w-300 my-12 mx-auto text-white">
-        <form className="max-w-200" action={shareMeal}>
+        <form className="max-w-200" action={formAction}>
           <div className="flex gap-4">
             <p className="w-full mb-8">
               <label
@@ -92,14 +96,10 @@ const ShareMealPage = () => {
               required
             ></textarea>
           </p>
-          <ImagePicker label="Image" name="image" />
+          <ImagePicker label="Your Image" name="image" />
+          {state.error && <p>{state.error}</p>}
           <p className="text-right">
-            <button
-              className="border-0 py-3 px-8 bg-linear-to-r from-[#f9572a] to-[#ff9b05] text-white rounded-sm cursor-pointer text-xl shadow-[0_2px_5px_rgba(0,0,0,0.3)] hover:bg-linear-to-r hover:from-[#fd4715] hover:to-[#f9b241] disabled:opacity-50 disabled:cursor-not-allowed"
-              type="submit"
-            >
-              Share Meal
-            </button>
+            <MealsFormSubmit />
           </p>
         </form>
       </main>

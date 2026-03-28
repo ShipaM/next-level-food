@@ -1,10 +1,16 @@
-import MealsGrid from "@/components/meals";
 import { getMeals } from "@/lib/meals";
 import Link from "next/link";
 import { Suspense } from "react";
 import MealsloadingPage from "./loading-out";
+import { MealsGrid } from "@/components/meals";
+
+export const metadata = {
+  title: "All Meals",
+  description: "Browse the delicious meals, shared by a food-loving community.",
+};
 
 async function Meals() {
+  console.log("Fetching meals...");
   const meals = await getMeals();
   return <MealsGrid meals={meals} />;
 }
